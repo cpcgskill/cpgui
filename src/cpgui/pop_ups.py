@@ -10,7 +10,12 @@ u"""
 :bilibili: https://space.bilibili.com/351598127
 
 """
+from __future__ import (nested_scopes, generators,
+                        division, absolute_import,
+                        with_statement, print_function,
+                        unicode_literals)
 import sys
+
 import maya.OpenMayaUI as OpenMayaUI
 from cpgui.std_imp import *
 
@@ -24,7 +29,7 @@ except:
 
 
 def get_file_name():
-    u"""
+    """
     获得文件路径
 
     :return: unicode is None
@@ -36,7 +41,7 @@ def get_file_name():
 
 
 def get_directory_name():
-    u"""
+    """
     获得文件夹路径
 
     :return: unicode is None
@@ -47,8 +52,8 @@ def get_directory_name():
     return path
 
 
-def input_text(title=u'输入', message=u'>>>', text=u''):
-    u"""
+def input_text(title='输入', message=u'>>>', text=u''):
+    """
     创建一个接受字符串输入的输入框
 
     :param title: 标题
@@ -62,8 +67,8 @@ def input_text(title=u'输入', message=u'>>>', text=u''):
     return None
 
 
-def input_int(title=u'输入', message=u'>>>', text=0):
-    u"""
+def input_int(title='输入', message=u'>>>', text=0):
+    """
     创建一个接受整数输入的输入框
 
     :param title: 标题
@@ -77,8 +82,8 @@ def input_int(title=u'输入', message=u'>>>', text=0):
     return None
 
 
-def input_double(title=u'输入', message=u'>>>', text=0.0):
-    u"""
+def input_double(title='输入', message=u'>>>', text=0.0):
+    """
     创建一个接受浮点输入的输入框
 
     :param title: 标题
@@ -92,8 +97,8 @@ def input_double(title=u'输入', message=u'>>>', text=0.0):
     return None
 
 
-def input_float(title=u'输入', message=u'>>>', text=0.0):
-    u"""
+def input_float(title='输入', message=u'>>>', text=0.0):
+    """
     创建一个接受浮点输入的输入框
 
     :param title: 标题
@@ -138,8 +143,8 @@ class _InputMultipleText(QDialog):
             return "", False
 
 
-def input_multiLine_text(title=u'输入', message=u'>>>', text=u''):
-    u"""
+def input_multiLine_text(title='输入', message=u'>>>', text=u''):
+    """
     创建一个接受字符串输入的多行输入框
 
     :param title: 标题
@@ -156,8 +161,8 @@ def input_multiLine_text(title=u'输入', message=u'>>>', text=u''):
         return None
 
 
-def confirm(title=u'确认', message=u''):
-    u"""
+def confirm(title='确认', message=u''):
+    """
     确认对话框
 
     :param title: 标题

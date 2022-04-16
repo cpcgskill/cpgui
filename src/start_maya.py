@@ -13,6 +13,6 @@ u"""
 import sys
 import os
 p = u'/'.join(os.path.split(__file__)[:-1])
-comm = u'maya "python \\"import sys;sys.path.append(\\\\"{}\\\\")\\""'.format(p)
+comm = u'start maya "python \\"import sys;sys.path.append(\\\\"{}\\\\")\\""'.format(p)
 os.system(comm)
 
