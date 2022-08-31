@@ -10,6 +10,7 @@ u"""
 :bilibili: https://space.bilibili.com/351598127
 
 """
+from __future__ import unicode_literals, print_function
 try:
     ui_lib_str = "PySide2"
     from PySide2.QtGui import *
@@ -33,4 +34,16 @@ try:
 except ImportError:
     from shiboken import *
 
+import sys
+import maya.OpenMayaUI as OpenMayaUI
+import maya.cmds as mc
+
 deleteWidget = delete
+try:
+    if hasattr(mc, "about"):
+        ptr_t = int if sys.version_info.major > 2 else long
+        mui = wrapInstance(ptr_t(OpenMayaUI.MQtUtil.mainWindow()), QWidget)
+    else:
+        mui = None
+except:
+    mui = None

@@ -14,18 +14,7 @@ from __future__ import (nested_scopes, generators,
                         division, absolute_import,
                         with_statement, print_function,
                         unicode_literals)
-import sys
-
-import maya.OpenMayaUI as OpenMayaUI
 from cpgui.std_imp import *
-
-try:
-    if sys.version_info.major >= 3:
-        mui = wrapInstance(int(OpenMayaUI.MQtUtil.mainWindow()), QWidget)
-    else:
-        mui = wrapInstance(long(OpenMayaUI.MQtUtil.mainWindow()), QWidget)
-except:
-    mui = None
 
 
 def get_file_name():
@@ -169,8 +158,7 @@ def confirm(title='确认', message=u''):
     :param message: 消息
     :return: bool
     """
-    reply = QMessageBox.question(mui, title, message,
-                                 QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+    reply = QMessageBox.question(mui, title, message, QMessageBox.Yes, QMessageBox.No)
     if reply == QMessageBox.StandardButton.No:
         return False
     else:
